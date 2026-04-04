@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenX AI - AI Video Generator</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1a0033);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+    }
+    .logo {
+      font-size: 3.5rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ff88);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+      margin: 30px 0 10px;
+      letter-spacing: -2px;
+    }
+    .tagline {
+      font-size: 1.3rem;
+      color: #aaa;
+      margin-bottom: 40px;
+    }
+    input {
+      width: 85%;
+      max-width: 600px;
+      padding: 18px;
+      font-size: 1.1rem;
+      background: #1f1f1f;
+      border: 2px solid #00ffff;
+      border-radius: 12px;
+      color: white;
+      margin-bottom: 20px;
+    }
+    button {
+      background: linear-gradient(45deg, #00ffff, #ff00ff);
+      color: black;
+      border: none;
+      padding: 16px 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    }
+    .video-area {
+      max-width: 620px;
+      margin: 40px auto;
+      background: #111;
+      border-radius: 16px;
+      padding: 20px;
+      border: 2px dashed #00ffff;
+    }
+    .placeholder {
+      color: #888;
+      font-size: 1.1rem;
+    }
+    .demo-note {
+      margin-top: 50px;
+      color: #666;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="logo">GENX AI</h1>
+  <p class="tagline">AI Video Generator</p>
+
+  <input type="text" id="prompt" placeholder="Describe the video you want... (e.g. A cute robot dancing in neon city at night)">
+
+  <br><br>
+  <button onclick="generateDemo()">✨ Generate Video</button>
+
+  <div class="video-area">
+    <div id="loading" style="display:none; color:#00ffff; font-size:1.2rem;">Forging your video with neon energy...</div>
+    <div id="result" class="placeholder">
+      <p>Your AI-generated video will appear here</p>
+      <p style="font-size:0.95rem;">(Demo mode — real generation coming soon!)</p>
+    </div>
+  </div>
+
+  <div class="demo-note">
+    GenX AI is in early development.<br>
+    Follow for updates and future Android app launch!
+  </div>
+
+  <script>
+    function generateDemo() {
+      const promptInput = document.getElementById('prompt').value.trim();
+      const prompt = promptInput || "A futuristic neon scene with flying cars";
+      
+      const loading = document.getElementById('loading');
+      const result = document.getElementById('result');
+      
+      loading.style.display = 'block';
+      result.style.display = 'none';
+
+      // Simulate generation time
+      setTimeout(() => {
+        loading.style.display = 'none';
+        result.innerHTML = `
+          <p><strong>Prompt:</strong> ${prompt}</p>
+          <p style="color:#00ffaa; font-size:1.2rem;">✅ Video forged successfully! (Demo)</p>
+          <p>Imagine a beautiful AI video playing here 🔥</p>
+          <p style="margin-top:20px; font-size:0.95rem;">Share this page and stay tuned for the real GenX AI app!</p>
+        `;
+        result.style.display = 'block';
+      }, 1800);
+    }
+  </script>
+</body>
+</html>
