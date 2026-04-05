@@ -14,15 +14,11 @@
       margin: 0;
       min-height: 100vh;
     }
-    .logo {
-      font-size: 3.2rem;
-      font-weight: 900;
-      background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ff88);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
-      margin: 30px 0 10px;
-      letter-spacing: -2px;
+    .logo-container img {
+      max-width: 320px;
+      height: auto;
+      margin: 20px 0 10px;
+      filter: drop-shadow(0 0 35px rgba(0, 255, 255, 0.9));
     }
     .tagline {
       font-size: 1.4rem;
@@ -72,7 +68,9 @@
   </style>
 </head>
 <body>
-  <h1 class="logo">GENX AI</h1>
+  <div class="logo-container">
+    <img src="file_000000001e68722fb29f040fdd1afa52.png" alt="GenX AI Logo">
+  </div>
   <p class="tagline">AI Video Generator</p>
 
   <input type="text" id="prompt" placeholder="Describe the video you want to create... (e.g. A cute robot dancing in neon city at night)">
@@ -114,7 +112,7 @@
           <p><strong>Prompt:</strong> ${prompt}</p>
           <p style="color:#00ffaa; font-size:1.2rem;">✅ Video forged successfully! (Demo)</p>
           <p>Imagine a beautiful AI-generated clip playing here 🔥</p>
-          <p style="margin-top:20px; font-size:0.95rem;">Share this page and stay tuned for the full GenX AI app!</p>
+          <p style="margin-top:20px; font-size:0.95rem;">Share this page and stay tuned for the full GenX AI app on Android!</p>
         `;
         result.style.display = 'block';
       }, 1800);
